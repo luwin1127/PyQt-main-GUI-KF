@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>566</width>
+    <height>623</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Segoe UI</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="software_group">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>79</y>
+      <width>551</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QWidget" name="gridLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>531</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="softwaregroup_grid">
+      <item row="0" column="2">
+       <widget class="QPushButton" name="simu_btn">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {background-color: #2eaf83;color: white;}</string>
+        </property>
+        <property name="text">
+         <string>进行仿真</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="exit_btn">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {background-color: #1b4aa1;color: white;}</string>
+        </property>
+        <property name="text">
+         <string>退出</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QCheckBox" name="save_data_box">
+        <property name="text">
+         <string>保存数据</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <layout class="QHBoxLayout" name="yes_or_no_hbox">
+        <item>
+         <widget class="QRadioButton" name="yes_btn">
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Calibri&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Yes</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="no_btn">
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Calibri&quot;;</string>
+          </property>
+          <property name="text">
+           <string>No</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="0">
+       <widget class="QComboBox" name="method_menu">
+        <item>
+         <property name="text">
+          <string>请选择滤波方式</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>信息滤波</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>UD滤波</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>遗忘滤波</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>自适应遗忘滤波(1)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>自适应遗忘滤波(2)</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QCheckBox" name="save_fig_box">
+        <property name="text">
+         <string>保存图片</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="save_time_lab">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    font-family: &quot;SimSun&quot;;
+    font-size: 10pt;
+    qproperty-alignment: AlignCenter;
+}</string>
+        </property>
+        <property name="text">
+         <string>保存数据是否记录当前时间</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="para_group">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>210</y>
+      <width>551</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox {
+    font-size: 10pt; 
+    qproperty-alignment: AlignCenter;
+}</string>
+    </property>
+    <property name="title">
+     <string>参数设置</string>
+    </property>
+    <widget class="QGroupBox" name="time_group">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>261</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QWidget" name="gridLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>241</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="timegroup_grid">
+       <item row="1" column="0">
+        <widget class="QLabel" name="sample_lab">
+         <property name="text">
+          <string>采样时长</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="simu_lab">
+         <property name="text">
+          <string>仿真时长</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="init_lab">
+         <property name="text">
+          <string>初始状态</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="simu_edit">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+	font: 10pt &quot;Times New Roman&quot;;
+    qproperty-alignment: AlignCenter;
+}</string>
+         </property>
+         <property name="text">
+          <string>300</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="sample_edit">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+	font: 10pt &quot;Times New Roman&quot;;
+    qproperty-alignment: AlignCenter;
+}</string>
+         </property>
+         <property name="text">
+          <string>1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="init_edit">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+	font: 10pt &quot;Times New Roman&quot;;
+    qproperty-alignment: AlignCenter;
+}</string>
+         </property>
+         <property name="text">
+          <string>[10000;-300]</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="state_group">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>20</y>
+       <width>261</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QWidget" name="gridLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>241</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="stategroup_grid">
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="process_edit">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+	font: 10pt &quot;Times New Roman&quot;;
+    qproperty-alignment: AlignCenter;
+}</string>
+         </property>
+         <property name="text">
+          <string>0.5</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="P_edit">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+	font: 10pt &quot;Times New Roman&quot;;
+    qproperty-alignment: AlignCenter;
+}</string>
+         </property>
+         <property name="text">
+          <string>[100,1]</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="measure_edit">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+	font: 10pt &quot;Times New Roman&quot;;
+    qproperty-alignment: AlignCenter;
+}</string>
+         </property>
+         <property name="text">
+          <string>2500</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="process_lab">
+         <property name="text">
+          <string>过程噪声</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="measure_lab">
+         <property name="text">
+          <string>量测噪声</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="P_lab">
+         <property name="text">
+          <string>协方差</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="info_lab">
+         <property name="text">
+          <string>信息矩阵</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="info_edit">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+	font: 10pt &quot;Times New Roman&quot;;
+    qproperty-alignment: AlignCenter;
+}</string>
+         </property>
+         <property name="text">
+          <string>[0,0;0,0]</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="eq1_group">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>190</y>
+       <width>261</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QGraphicsView" name="eq1_disp">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>261</width>
+        <height>161</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="eq2_group">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>190</y>
+       <width>261</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QGraphicsView" name="eq2_disp">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>261</width>
+        <height>161</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="title_lab">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>551</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 28pt &quot;华文中宋&quot;;
+    qproperty-alignment: AlignCenter;  /* 文字居中 */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>卡尔曼滤波仿真软件Demo</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>566</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
