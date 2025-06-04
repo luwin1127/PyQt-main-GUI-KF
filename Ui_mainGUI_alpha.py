@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\opps\Desktop\GUI_test\mainGUI_alpha.ui'
+# Form implementation generated from reading ui file 'd:\opps\Desktop\To do\PyQt-main-GUI-KF\mainGUI_alpha.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -33,11 +33,43 @@ class Ui_MainWindow(object):
         self.softwaregroup_grid.setContentsMargins(0, 0, 0, 0)
         self.softwaregroup_grid.setObjectName("softwaregroup_grid")
         self.simu_btn = QtWidgets.QPushButton(self.gridLayoutWidget)
-        self.simu_btn.setStyleSheet("QPushButton {background-color: #2eaf83;color: white;}")
+        self.simu_btn.setStyleSheet("QPushButton {\n"
+"    background-color: #2eaf83;\n"
+"    border-style: outset;\n"
+"    color: white;\n"
+"    padding: 4px;\n"
+"    min-height: 20px;\n"
+"    border-radius:7px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
+"    stop:0 #FF6465, stop:1 #9198FF);\n"
+"    color:white;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color: rgb(65, 65, 65);\n"
+"    color:white;\n"
+"}")
         self.simu_btn.setObjectName("simu_btn")
         self.softwaregroup_grid.addWidget(self.simu_btn, 0, 2, 1, 1)
         self.exit_btn = QtWidgets.QPushButton(self.gridLayoutWidget)
-        self.exit_btn.setStyleSheet("QPushButton {background-color: #1b4aa1;color: white;}")
+        self.exit_btn.setStyleSheet("QPushButton {\n"
+"    background-color: #1b4aa1;\n"
+"    border-style: outset;\n"
+"    color: white;\n"
+"    padding: 4px;\n"
+"    min-height: 20px;\n"
+"    border-radius:7px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
+"    stop:0 #FF6465, stop:1 #9198FF);\n"
+"    color:white;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color: rgb(65, 65, 65);\n"
+"    color:white;\n"
+"}")
         self.exit_btn.setObjectName("exit_btn")
         self.softwaregroup_grid.addWidget(self.exit_btn, 1, 2, 1, 1)
         self.save_data_box = QtWidgets.QCheckBox(self.gridLayoutWidget)

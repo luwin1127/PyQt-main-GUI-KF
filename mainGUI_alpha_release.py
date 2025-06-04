@@ -249,8 +249,7 @@ class MainApp(QMainWindow, Ui_MainWindow):
         # print("量测噪声:", params["measure_noise"])
         # print("信息矩阵:\n", params["info_matrix"])
         
-        # 实际仿真逻辑可在此处添加
-        print("\n===== 开始仿真计算 =====")
+        print("===== 开始仿真计算 =====")
 
         # 仿真参数
         T = params["simu_time"]                 # 仿真时长
@@ -568,12 +567,26 @@ class MainApp(QMainWindow, Ui_MainWindow):
             with open(save_path, 'wb') as f:
                 pickle.dump(data_to_save, f, protocol=pickle.HIGHEST_PROTOCOL)
 
-        print(f"仿真结果已保存至: ./figures/")
-        print(f"数据已保存至: {save_path}")
-
+            print(f"仿真结果已保存至: ./figures/")
+            print(f"数据已保存至: {save_path}")
+        print("===== 仿真计算结束 =====")
 
 if __name__ == '__main__':
+    # NOTICE：01必须放在02前面
+    # 01-高分辨率屏幕控件自适应调整
+    QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling) # 原有控件缩放，参考：https://zhuanlan.zhihu.com/p/401503085
+
+    # 02-应用程序初始化
     app = QApplication(sys.argv)
+    
+    # 03-高分辨率屏幕字体自适应调整
+    screen = app.primaryScreen()    # 返回当前主显示器的信息
+    scale_factor = screen.logicalDotsPerInch() / 96  # 96dpi为标准缩放（100%），结果如1.75（175%缩放）
+    font = QtGui.QFont()            # 创建默认字体
+    font.setPointSize(int(10 * scale_factor))  # 原字体10pt，乘以缩放因子
+    app.setFont(font)
+
+    # 04-创建并显示应用窗口
     window = MainApp()
     window.show()
     sys.exit(app.exec_())

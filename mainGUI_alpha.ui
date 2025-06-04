@@ -50,7 +50,23 @@
       <item row="0" column="2">
        <widget class="QPushButton" name="simu_btn">
         <property name="styleSheet">
-         <string notr="true">QPushButton {background-color: #2eaf83;color: white;}</string>
+         <string notr="true">QPushButton {
+	background-color: #2eaf83;
+	border-style: outset;
+	color: white;
+    padding: 4px;
+    min-height: 20px;
+	border-radius:7px;
+}
+QPushButton:hover {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, 
+    stop:0 #FF6465, stop:1 #9198FF);
+	color:white;
+}
+QPushButton:pressed{
+	background-color: rgb(65, 65, 65);
+	color:white;
+}</string>
         </property>
         <property name="text">
          <string>进行仿真</string>
@@ -60,7 +76,23 @@
       <item row="1" column="2">
        <widget class="QPushButton" name="exit_btn">
         <property name="styleSheet">
-         <string notr="true">QPushButton {background-color: #1b4aa1;color: white;}</string>
+         <string notr="true">QPushButton {
+	background-color: #1b4aa1;
+	border-style: outset;
+	color: white;
+    padding: 4px;
+    min-height: 20px;
+	border-radius:7px;
+}
+QPushButton:hover {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, 
+    stop:0 #FF6465, stop:1 #9198FF);
+	color:white;
+}
+QPushButton:pressed{
+	background-color: rgb(65, 65, 65);
+	color:white;
+}</string>
         </property>
         <property name="text">
          <string>退出</string>
