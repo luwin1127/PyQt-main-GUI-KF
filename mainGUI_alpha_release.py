@@ -20,7 +20,7 @@ from datetime import datetime
 class MainApp(QMainWindow, Ui_MainWindow):
     def __init__(self):
         """主窗口初始化"""
-        super().__init__()
+        super().__init__()          # 调用父类的初始化方法
         self.setupUi(self)          # 加载UI设计
         self.init_ui()              # 初始化界面设置
         self.bind_events()          # 绑定UI事件处理函数
