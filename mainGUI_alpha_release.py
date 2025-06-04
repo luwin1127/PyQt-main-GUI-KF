@@ -82,7 +82,7 @@ class MainApp(QMainWindow, Ui_MainWindow):
         if state == QtCore.Qt.Checked:  # 当勾选时
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Warning)
-            msg.setText("保存图片则仿真完毕之后不会展示结果。")
+            msg.setText("选择“保存图片”则仿真完毕之后不会展示结果。")
             msg.setWindowTitle("操作提示")
             msg.exec_()
 

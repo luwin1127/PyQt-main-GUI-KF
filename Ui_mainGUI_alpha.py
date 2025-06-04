@@ -24,6 +24,20 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.software_group = QtWidgets.QGroupBox(self.centralwidget)
         self.software_group.setGeometry(QtCore.QRect(10, 79, 551, 121))
+        self.software_group.setStyleSheet("QGroupBox {\n"
+"    font-size: 10pt; \n"
+"    qproperty-alignment: AlignCenter;\n"
+"    border: 0.5px solid #8f8f91;  /* 设置边框颜色为浅灰色 */\n"
+"    border-radius: 5px;\n"
+"    padding: 2px 4px;\n"
+"}\n"
+"\n"
+"QGroupBox::title {\n"
+"    subcontrol-origin: margin;\n"
+"    subcontrol-position: top center; /* 标题居中 */\n"
+"    padding: 0 3px 0 3px;\n"
+"    background-color: transparent;  /* 标题背景透明 */\n"
+"}")
         self.software_group.setTitle("")
         self.software_group.setObjectName("software_group")
         self.gridLayoutWidget = QtWidgets.QWidget(self.software_group)
@@ -32,26 +46,17 @@ class Ui_MainWindow(object):
         self.softwaregroup_grid = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.softwaregroup_grid.setContentsMargins(0, 0, 0, 0)
         self.softwaregroup_grid.setObjectName("softwaregroup_grid")
-        self.simu_btn = QtWidgets.QPushButton(self.gridLayoutWidget)
-        self.simu_btn.setStyleSheet("QPushButton {\n"
-"    background-color: #2eaf83;\n"
-"    border-style: outset;\n"
-"    color: white;\n"
-"    padding: 4px;\n"
-"    min-height: 20px;\n"
-"    border-radius:7px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
-"    stop:0 #FF6465, stop:1 #9198FF);\n"
-"    color:white;\n"
-"}\n"
-"QPushButton:pressed{\n"
-"    background-color: rgb(65, 65, 65);\n"
-"    color:white;\n"
-"}")
-        self.simu_btn.setObjectName("simu_btn")
-        self.softwaregroup_grid.addWidget(self.simu_btn, 0, 2, 1, 1)
+        self.yes_or_no_hbox = QtWidgets.QHBoxLayout()
+        self.yes_or_no_hbox.setObjectName("yes_or_no_hbox")
+        self.yes_btn = QtWidgets.QRadioButton(self.gridLayoutWidget)
+        self.yes_btn.setStyleSheet("font: 10pt \"Calibri\";")
+        self.yes_btn.setObjectName("yes_btn")
+        self.yes_or_no_hbox.addWidget(self.yes_btn)
+        self.no_btn = QtWidgets.QRadioButton(self.gridLayoutWidget)
+        self.no_btn.setStyleSheet("font: 10pt \"Calibri\";")
+        self.no_btn.setObjectName("no_btn")
+        self.yes_or_no_hbox.addWidget(self.no_btn)
+        self.softwaregroup_grid.addLayout(self.yes_or_no_hbox, 2, 1, 1, 1)
         self.exit_btn = QtWidgets.QPushButton(self.gridLayoutWidget)
         self.exit_btn.setStyleSheet("QPushButton {\n"
 "    background-color: #1b4aa1;\n"
@@ -72,21 +77,34 @@ class Ui_MainWindow(object):
 "}")
         self.exit_btn.setObjectName("exit_btn")
         self.softwaregroup_grid.addWidget(self.exit_btn, 1, 2, 1, 1)
+        self.simu_btn = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.simu_btn.setStyleSheet("QPushButton {\n"
+"    background-color: #2eaf83;\n"
+"    border-style: outset;\n"
+"    color: white;\n"
+"    padding: 4px;\n"
+"    min-height: 20px;\n"
+"    border-radius:7px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
+"    stop:0 #FF6465, stop:1 #9198FF);\n"
+"    color:white;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color: rgb(65, 65, 65);\n"
+"    color:white;\n"
+"}")
+        self.simu_btn.setObjectName("simu_btn")
+        self.softwaregroup_grid.addWidget(self.simu_btn, 0, 2, 1, 1)
         self.save_data_box = QtWidgets.QCheckBox(self.gridLayoutWidget)
         self.save_data_box.setObjectName("save_data_box")
         self.softwaregroup_grid.addWidget(self.save_data_box, 1, 1, 1, 1)
-        self.yes_or_no_hbox = QtWidgets.QHBoxLayout()
-        self.yes_or_no_hbox.setObjectName("yes_or_no_hbox")
-        self.yes_btn = QtWidgets.QRadioButton(self.gridLayoutWidget)
-        self.yes_btn.setStyleSheet("font: 10pt \"Calibri\";")
-        self.yes_btn.setObjectName("yes_btn")
-        self.yes_or_no_hbox.addWidget(self.yes_btn)
-        self.no_btn = QtWidgets.QRadioButton(self.gridLayoutWidget)
-        self.no_btn.setStyleSheet("font: 10pt \"Calibri\";")
-        self.no_btn.setObjectName("no_btn")
-        self.yes_or_no_hbox.addWidget(self.no_btn)
-        self.softwaregroup_grid.addLayout(self.yes_or_no_hbox, 2, 1, 1, 1)
+        self.save_fig_box = QtWidgets.QCheckBox(self.gridLayoutWidget)
+        self.save_fig_box.setObjectName("save_fig_box")
+        self.softwaregroup_grid.addWidget(self.save_fig_box, 0, 1, 1, 1)
         self.method_menu = QtWidgets.QComboBox(self.gridLayoutWidget)
+        self.method_menu.setStyleSheet("")
         self.method_menu.setObjectName("method_menu")
         self.method_menu.addItem("")
         self.method_menu.addItem("")
@@ -95,9 +113,6 @@ class Ui_MainWindow(object):
         self.method_menu.addItem("")
         self.method_menu.addItem("")
         self.softwaregroup_grid.addWidget(self.method_menu, 0, 0, 1, 1)
-        self.save_fig_box = QtWidgets.QCheckBox(self.gridLayoutWidget)
-        self.save_fig_box.setObjectName("save_fig_box")
-        self.softwaregroup_grid.addWidget(self.save_fig_box, 0, 1, 1, 1)
         self.save_time_lab = QtWidgets.QLabel(self.gridLayoutWidget)
         self.save_time_lab.setStyleSheet("QLabel {\n"
 "    font-family: \"SimSun\";\n"
@@ -111,6 +126,16 @@ class Ui_MainWindow(object):
         self.para_group.setStyleSheet("QGroupBox {\n"
 "    font-size: 10pt; \n"
 "    qproperty-alignment: AlignCenter;\n"
+"    border: 0.5px solid #a9a9a9;  /* 设置边框颜色为浅灰色 */\n"
+"    border-radius: 5px;\n"
+"    padding: 2px 4px;\n"
+"}\n"
+"\n"
+"QGroupBox::title {\n"
+"    subcontrol-origin: margin;\n"
+"    subcontrol-position: top center; /* 标题居中 */\n"
+"    padding: 0 3px 0 3px;\n"
+"    background-color: transparent;  /* 标题背景透明 */\n"
 "}")
         self.para_group.setObjectName("para_group")
         self.time_group = QtWidgets.QGroupBox(self.para_group)
@@ -136,6 +161,8 @@ class Ui_MainWindow(object):
         self.simu_edit.setStyleSheet("QLineEdit {\n"
 "    font: 10pt \"Times New Roman\";\n"
 "    qproperty-alignment: AlignCenter;\n"
+"    border-radius:5px;\n"
+"    padding:2px 4px\n"
 "}")
         self.simu_edit.setObjectName("simu_edit")
         self.timegroup_grid.addWidget(self.simu_edit, 0, 1, 1, 1)
@@ -143,6 +170,8 @@ class Ui_MainWindow(object):
         self.sample_edit.setStyleSheet("QLineEdit {\n"
 "    font: 10pt \"Times New Roman\";\n"
 "    qproperty-alignment: AlignCenter;\n"
+"    border-radius:5px;\n"
+"    padding:2px 4px\n"
 "}")
         self.sample_edit.setObjectName("sample_edit")
         self.timegroup_grid.addWidget(self.sample_edit, 1, 1, 1, 1)
@@ -150,6 +179,8 @@ class Ui_MainWindow(object):
         self.init_edit.setStyleSheet("QLineEdit {\n"
 "    font: 10pt \"Times New Roman\";\n"
 "    qproperty-alignment: AlignCenter;\n"
+"    border-radius:5px;\n"
+"    padding:2px 4px\n"
 "}")
         self.init_edit.setObjectName("init_edit")
         self.timegroup_grid.addWidget(self.init_edit, 2, 1, 1, 1)
@@ -167,6 +198,8 @@ class Ui_MainWindow(object):
         self.process_edit.setStyleSheet("QLineEdit {\n"
 "    font: 10pt \"Times New Roman\";\n"
 "    qproperty-alignment: AlignCenter;\n"
+"    border-radius:5px;\n"
+"    padding:2px 4px\n"
 "}")
         self.process_edit.setObjectName("process_edit")
         self.stategroup_grid.addWidget(self.process_edit, 0, 1, 1, 1)
@@ -174,6 +207,8 @@ class Ui_MainWindow(object):
         self.P_edit.setStyleSheet("QLineEdit {\n"
 "    font: 10pt \"Times New Roman\";\n"
 "    qproperty-alignment: AlignCenter;\n"
+"    border-radius:5px;\n"
+"    padding:2px 4px\n"
 "}")
         self.P_edit.setObjectName("P_edit")
         self.stategroup_grid.addWidget(self.P_edit, 2, 1, 1, 1)
@@ -181,6 +216,8 @@ class Ui_MainWindow(object):
         self.measure_edit.setStyleSheet("QLineEdit {\n"
 "    font: 10pt \"Times New Roman\";\n"
 "    qproperty-alignment: AlignCenter;\n"
+"    border-radius:5px;\n"
+"    padding:2px 4px\n"
 "}")
         self.measure_edit.setObjectName("measure_edit")
         self.stategroup_grid.addWidget(self.measure_edit, 1, 1, 1, 1)
@@ -200,6 +237,8 @@ class Ui_MainWindow(object):
         self.info_edit.setStyleSheet("QLineEdit {\n"
 "    font: 10pt \"Times New Roman\";\n"
 "    qproperty-alignment: AlignCenter;\n"
+"    border-radius:5px;\n"
+"    padding:2px 4px\n"
 "}")
         self.info_edit.setObjectName("info_edit")
         self.stategroup_grid.addWidget(self.info_edit, 3, 1, 1, 1)
@@ -209,6 +248,12 @@ class Ui_MainWindow(object):
         self.eq1_group.setObjectName("eq1_group")
         self.eq1_disp = QtWidgets.QGraphicsView(self.eq1_group)
         self.eq1_disp.setGeometry(QtCore.QRect(0, 0, 261, 161))
+        self.eq1_disp.setStyleSheet("QGraphicsView {\n"
+"    border: 0.5px solid #8f8f91;  /* 设置边框颜色为浅灰色 */\n"
+"    border-radius: 5px;\n"
+"    padding: 2px 4px;\n"
+"}\n"
+"")
         self.eq1_disp.setObjectName("eq1_disp")
         self.eq2_group = QtWidgets.QGroupBox(self.para_group)
         self.eq2_group.setGeometry(QtCore.QRect(280, 190, 261, 161))
@@ -216,6 +261,12 @@ class Ui_MainWindow(object):
         self.eq2_group.setObjectName("eq2_group")
         self.eq2_disp = QtWidgets.QGraphicsView(self.eq2_group)
         self.eq2_disp.setGeometry(QtCore.QRect(0, 0, 261, 161))
+        self.eq2_disp.setStyleSheet("QGraphicsView {\n"
+"    border: 0.5px solid #8f8f91;  /* 设置边框颜色为浅灰色 */\n"
+"    border-radius: 5px;\n"
+"    padding: 2px 4px;\n"
+"}\n"
+"")
         self.eq2_disp.setObjectName("eq2_disp")
         self.title_lab = QtWidgets.QLabel(self.centralwidget)
         self.title_lab.setGeometry(QtCore.QRect(10, 10, 551, 61))
@@ -240,18 +291,18 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.simu_btn.setText(_translate("MainWindow", "进行仿真"))
-        self.exit_btn.setText(_translate("MainWindow", "退出"))
-        self.save_data_box.setText(_translate("MainWindow", "保存数据"))
         self.yes_btn.setText(_translate("MainWindow", "Yes"))
         self.no_btn.setText(_translate("MainWindow", "No"))
+        self.exit_btn.setText(_translate("MainWindow", "退出"))
+        self.simu_btn.setText(_translate("MainWindow", "进行仿真"))
+        self.save_data_box.setText(_translate("MainWindow", "保存数据"))
+        self.save_fig_box.setText(_translate("MainWindow", "保存图片"))
         self.method_menu.setItemText(0, _translate("MainWindow", "请选择滤波方式"))
         self.method_menu.setItemText(1, _translate("MainWindow", "信息滤波"))
         self.method_menu.setItemText(2, _translate("MainWindow", "UD滤波"))
         self.method_menu.setItemText(3, _translate("MainWindow", "遗忘滤波"))
         self.method_menu.setItemText(4, _translate("MainWindow", "自适应遗忘滤波(1)"))
         self.method_menu.setItemText(5, _translate("MainWindow", "自适应遗忘滤波(2)"))
-        self.save_fig_box.setText(_translate("MainWindow", "保存图片"))
         self.save_time_lab.setText(_translate("MainWindow", "保存数据是否记录当前时间"))
         self.para_group.setTitle(_translate("MainWindow", "参数设置"))
         self.sample_lab.setText(_translate("MainWindow", "采样时长"))

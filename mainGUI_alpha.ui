@@ -34,6 +34,22 @@
       <height>121</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox {
+    font-size: 10pt; 
+    qproperty-alignment: AlignCenter;
+    border: 0.5px solid #8f8f91;  /* 设置边框颜色为浅灰色 */
+    border-radius: 5px;
+    padding: 2px 4px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center; /* 标题居中 */
+    padding: 0 3px 0 3px;
+    background-color: transparent;  /* 标题背景透明 */
+}</string>
+    </property>
     <property name="title">
      <string/>
     </property>
@@ -47,31 +63,29 @@
       </rect>
      </property>
      <layout class="QGridLayout" name="softwaregroup_grid">
-      <item row="0" column="2">
-       <widget class="QPushButton" name="simu_btn">
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-	background-color: #2eaf83;
-	border-style: outset;
-	color: white;
-    padding: 4px;
-    min-height: 20px;
-	border-radius:7px;
-}
-QPushButton:hover {
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, 
-    stop:0 #FF6465, stop:1 #9198FF);
-	color:white;
-}
-QPushButton:pressed{
-	background-color: rgb(65, 65, 65);
-	color:white;
-}</string>
-        </property>
-        <property name="text">
-         <string>进行仿真</string>
-        </property>
-       </widget>
+      <item row="2" column="1">
+       <layout class="QHBoxLayout" name="yes_or_no_hbox">
+        <item>
+         <widget class="QRadioButton" name="yes_btn">
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Calibri&quot;;</string>
+          </property>
+          <property name="text">
+           <string>Yes</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="no_btn">
+          <property name="styleSheet">
+           <string notr="true">font: 10pt &quot;Calibri&quot;;</string>
+          </property>
+          <property name="text">
+           <string>No</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
       <item row="1" column="2">
        <widget class="QPushButton" name="exit_btn">
@@ -99,6 +113,32 @@ QPushButton:pressed{
         </property>
        </widget>
       </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="simu_btn">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	background-color: #2eaf83;
+	border-style: outset;
+	color: white;
+    padding: 4px;
+    min-height: 20px;
+	border-radius:7px;
+}
+QPushButton:hover {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, 
+    stop:0 #FF6465, stop:1 #9198FF);
+	color:white;
+}
+QPushButton:pressed{
+	background-color: rgb(65, 65, 65);
+	color:white;
+}</string>
+        </property>
+        <property name="text">
+         <string>进行仿真</string>
+        </property>
+       </widget>
+      </item>
       <item row="1" column="1">
        <widget class="QCheckBox" name="save_data_box">
         <property name="text">
@@ -106,32 +146,18 @@ QPushButton:pressed{
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
-       <layout class="QHBoxLayout" name="yes_or_no_hbox">
-        <item>
-         <widget class="QRadioButton" name="yes_btn">
-          <property name="styleSheet">
-           <string notr="true">font: 10pt &quot;Calibri&quot;;</string>
-          </property>
-          <property name="text">
-           <string>Yes</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="no_btn">
-          <property name="styleSheet">
-           <string notr="true">font: 10pt &quot;Calibri&quot;;</string>
-          </property>
-          <property name="text">
-           <string>No</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+      <item row="0" column="1">
+       <widget class="QCheckBox" name="save_fig_box">
+        <property name="text">
+         <string>保存图片</string>
+        </property>
+       </widget>
       </item>
       <item row="0" column="0">
        <widget class="QComboBox" name="method_menu">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
         <item>
          <property name="text">
           <string>请选择滤波方式</string>
@@ -164,13 +190,6 @@ QPushButton:pressed{
         </item>
        </widget>
       </item>
-      <item row="0" column="1">
-       <widget class="QCheckBox" name="save_fig_box">
-        <property name="text">
-         <string>保存图片</string>
-        </property>
-       </widget>
-      </item>
       <item row="2" column="0">
        <widget class="QLabel" name="save_time_lab">
         <property name="styleSheet">
@@ -201,6 +220,16 @@ QPushButton:pressed{
      <string notr="true">QGroupBox {
     font-size: 10pt; 
     qproperty-alignment: AlignCenter;
+    border: 0.5px solid #a9a9a9;  /* 设置边框颜色为浅灰色 */
+    border-radius: 5px;
+    padding: 2px 4px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center; /* 标题居中 */
+    padding: 0 3px 0 3px;
+    background-color: transparent;  /* 标题背景透明 */
 }</string>
     </property>
     <property name="title">
@@ -255,6 +284,8 @@ QPushButton:pressed{
           <string notr="true">QLineEdit {
 	font: 10pt &quot;Times New Roman&quot;;
     qproperty-alignment: AlignCenter;
+	border-radius:5px;
+	padding:2px 4px
 }</string>
          </property>
          <property name="text">
@@ -268,6 +299,8 @@ QPushButton:pressed{
           <string notr="true">QLineEdit {
 	font: 10pt &quot;Times New Roman&quot;;
     qproperty-alignment: AlignCenter;
+	border-radius:5px;
+	padding:2px 4px
 }</string>
          </property>
          <property name="text">
@@ -281,6 +314,8 @@ QPushButton:pressed{
           <string notr="true">QLineEdit {
 	font: 10pt &quot;Times New Roman&quot;;
     qproperty-alignment: AlignCenter;
+	border-radius:5px;
+	padding:2px 4px
 }</string>
          </property>
          <property name="text">
@@ -319,6 +354,8 @@ QPushButton:pressed{
           <string notr="true">QLineEdit {
 	font: 10pt &quot;Times New Roman&quot;;
     qproperty-alignment: AlignCenter;
+	border-radius:5px;
+	padding:2px 4px
 }</string>
          </property>
          <property name="text">
@@ -332,6 +369,8 @@ QPushButton:pressed{
           <string notr="true">QLineEdit {
 	font: 10pt &quot;Times New Roman&quot;;
     qproperty-alignment: AlignCenter;
+	border-radius:5px;
+	padding:2px 4px
 }</string>
          </property>
          <property name="text">
@@ -345,6 +384,8 @@ QPushButton:pressed{
           <string notr="true">QLineEdit {
 	font: 10pt &quot;Times New Roman&quot;;
     qproperty-alignment: AlignCenter;
+	border-radius:5px;
+	padding:2px 4px
 }</string>
          </property>
          <property name="text">
@@ -386,6 +427,8 @@ QPushButton:pressed{
           <string notr="true">QLineEdit {
 	font: 10pt &quot;Times New Roman&quot;;
     qproperty-alignment: AlignCenter;
+	border-radius:5px;
+	padding:2px 4px
 }</string>
          </property>
          <property name="text">
@@ -417,6 +460,14 @@ QPushButton:pressed{
         <height>161</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QGraphicsView {
+    border: 0.5px solid #8f8f91;  /* 设置边框颜色为浅灰色 */
+    border-radius: 5px;
+    padding: 2px 4px;
+}
+</string>
+      </property>
      </widget>
     </widget>
     <widget class="QGroupBox" name="eq2_group">
@@ -439,6 +490,14 @@ QPushButton:pressed{
         <width>261</width>
         <height>161</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QGraphicsView {
+    border: 0.5px solid #8f8f91;  /* 设置边框颜色为浅灰色 */
+    border-radius: 5px;
+    padding: 2px 4px;
+}
+</string>
       </property>
      </widget>
     </widget>
