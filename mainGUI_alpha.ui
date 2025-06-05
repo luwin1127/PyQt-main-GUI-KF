@@ -19,7 +19,9 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">QMainWindow {
+    background-color: white;
+}</string>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonIconOnly</enum>
@@ -282,10 +284,20 @@ QGroupBox::title {
         <widget class="QLineEdit" name="simu_edit">
          <property name="styleSheet">
           <string notr="true">QLineEdit {
-	font: 10pt &quot;Times New Roman&quot;;
+    background-color: #f0f0f0;
+    font: 10pt &quot;Times New Roman&quot;;
     qproperty-alignment: AlignCenter;
-	border-radius:5px;
-	padding:2px 4px
+    border-radius: 5px;
+    padding: 2px 4px;
+}
+
+QLineEdit:hover {
+    background-color: #cce4f7;
+}
+
+QLineEdit:focus {
+    background-color: #0078d7;
+    color: white;
 }</string>
          </property>
          <property name="text">
@@ -297,10 +309,20 @@ QGroupBox::title {
         <widget class="QLineEdit" name="sample_edit">
          <property name="styleSheet">
           <string notr="true">QLineEdit {
-	font: 10pt &quot;Times New Roman&quot;;
+    background-color: #f0f0f0;
+    font: 10pt &quot;Times New Roman&quot;;
     qproperty-alignment: AlignCenter;
-	border-radius:5px;
-	padding:2px 4px
+    border-radius: 5px;
+    padding: 2px 4px;
+}
+
+QLineEdit:hover {
+    background-color: #cce4f7;
+}
+
+QLineEdit:focus {
+    background-color: #0078d7;
+    color: white;
 }</string>
          </property>
          <property name="text">
@@ -312,10 +334,20 @@ QGroupBox::title {
         <widget class="QLineEdit" name="init_edit">
          <property name="styleSheet">
           <string notr="true">QLineEdit {
-	font: 10pt &quot;Times New Roman&quot;;
+    background-color: #f0f0f0;
+    font: 10pt &quot;Times New Roman&quot;;
     qproperty-alignment: AlignCenter;
-	border-radius:5px;
-	padding:2px 4px
+    border-radius: 5px;
+    padding: 2px 4px;
+}
+
+QLineEdit:hover {
+    background-color: #cce4f7;
+}
+
+QLineEdit:focus {
+    background-color: #0078d7;
+    color: white;
 }</string>
          </property>
          <property name="text">
@@ -352,10 +384,20 @@ QGroupBox::title {
         <widget class="QLineEdit" name="process_edit">
          <property name="styleSheet">
           <string notr="true">QLineEdit {
-	font: 10pt &quot;Times New Roman&quot;;
+    background-color: #f0f0f0;
+    font: 10pt &quot;Times New Roman&quot;;
     qproperty-alignment: AlignCenter;
-	border-radius:5px;
-	padding:2px 4px
+    border-radius: 5px;
+    padding: 2px 4px;
+}
+
+QLineEdit:hover {
+    background-color: #cce4f7;
+}
+
+QLineEdit:focus {
+    background-color: #0078d7;
+    color: white;
 }</string>
          </property>
          <property name="text">
@@ -367,10 +409,20 @@ QGroupBox::title {
         <widget class="QLineEdit" name="P_edit">
          <property name="styleSheet">
           <string notr="true">QLineEdit {
-	font: 10pt &quot;Times New Roman&quot;;
+    background-color: #f0f0f0;
+    font: 10pt &quot;Times New Roman&quot;;
     qproperty-alignment: AlignCenter;
-	border-radius:5px;
-	padding:2px 4px
+    border-radius: 5px;
+    padding: 2px 4px;
+}
+
+QLineEdit:hover {
+    background-color: #cce4f7;
+}
+
+QLineEdit:focus {
+    background-color: #0078d7;
+    color: white;
 }</string>
          </property>
          <property name="text">
@@ -382,10 +434,20 @@ QGroupBox::title {
         <widget class="QLineEdit" name="measure_edit">
          <property name="styleSheet">
           <string notr="true">QLineEdit {
-	font: 10pt &quot;Times New Roman&quot;;
+    background-color: #f0f0f0;
+    font: 10pt &quot;Times New Roman&quot;;
     qproperty-alignment: AlignCenter;
-	border-radius:5px;
-	padding:2px 4px
+    border-radius: 5px;
+    padding: 2px 4px;
+}
+
+QLineEdit:hover {
+    background-color: #cce4f7;
+}
+
+QLineEdit:focus {
+    background-color: #0078d7;
+    color: white;
 }</string>
          </property>
          <property name="text">
@@ -425,10 +487,20 @@ QGroupBox::title {
         <widget class="QLineEdit" name="info_edit">
          <property name="styleSheet">
           <string notr="true">QLineEdit {
-	font: 10pt &quot;Times New Roman&quot;;
+    background-color: #f0f0f0;
+    font: 10pt &quot;Times New Roman&quot;;
     qproperty-alignment: AlignCenter;
-	border-radius:5px;
-	padding:2px 4px
+    border-radius: 5px;
+    padding: 2px 4px;
+}
+
+QLineEdit:hover {
+    background-color: #cce4f7;
+}
+
+QLineEdit:focus {
+    background-color: #0078d7;
+    color: white;
 }</string>
          </property>
          <property name="text">

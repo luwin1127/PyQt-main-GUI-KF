@@ -18,7 +18,9 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         MainWindow.setFont(font)
-        MainWindow.setStyleSheet("")
+        MainWindow.setStyleSheet("QMainWindow {\n"
+"    background-color: white;\n"
+"}")
         MainWindow.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -159,28 +161,58 @@ class Ui_MainWindow(object):
         self.timegroup_grid.addWidget(self.init_lab, 2, 0, 1, 1)
         self.simu_edit = QtWidgets.QLineEdit(self.gridLayoutWidget_2)
         self.simu_edit.setStyleSheet("QLineEdit {\n"
+"    background-color: #f0f0f0;\n"
 "    font: 10pt \"Times New Roman\";\n"
 "    qproperty-alignment: AlignCenter;\n"
-"    border-radius:5px;\n"
-"    padding:2px 4px\n"
+"    border-radius: 5px;\n"
+"    padding: 2px 4px;\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"    background-color: #cce4f7;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    background-color: #0078d7;\n"
+"    color: white;\n"
 "}")
         self.simu_edit.setObjectName("simu_edit")
         self.timegroup_grid.addWidget(self.simu_edit, 0, 1, 1, 1)
         self.sample_edit = QtWidgets.QLineEdit(self.gridLayoutWidget_2)
         self.sample_edit.setStyleSheet("QLineEdit {\n"
+"    background-color: #f0f0f0;\n"
 "    font: 10pt \"Times New Roman\";\n"
 "    qproperty-alignment: AlignCenter;\n"
-"    border-radius:5px;\n"
-"    padding:2px 4px\n"
+"    border-radius: 5px;\n"
+"    padding: 2px 4px;\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"    background-color: #cce4f7;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    background-color: #0078d7;\n"
+"    color: white;\n"
 "}")
         self.sample_edit.setObjectName("sample_edit")
         self.timegroup_grid.addWidget(self.sample_edit, 1, 1, 1, 1)
         self.init_edit = QtWidgets.QLineEdit(self.gridLayoutWidget_2)
         self.init_edit.setStyleSheet("QLineEdit {\n"
+"    background-color: #f0f0f0;\n"
 "    font: 10pt \"Times New Roman\";\n"
 "    qproperty-alignment: AlignCenter;\n"
-"    border-radius:5px;\n"
-"    padding:2px 4px\n"
+"    border-radius: 5px;\n"
+"    padding: 2px 4px;\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"    background-color: #cce4f7;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    background-color: #0078d7;\n"
+"    color: white;\n"
 "}")
         self.init_edit.setObjectName("init_edit")
         self.timegroup_grid.addWidget(self.init_edit, 2, 1, 1, 1)
@@ -196,28 +228,58 @@ class Ui_MainWindow(object):
         self.stategroup_grid.setObjectName("stategroup_grid")
         self.process_edit = QtWidgets.QLineEdit(self.gridLayoutWidget_3)
         self.process_edit.setStyleSheet("QLineEdit {\n"
+"    background-color: #f0f0f0;\n"
 "    font: 10pt \"Times New Roman\";\n"
 "    qproperty-alignment: AlignCenter;\n"
-"    border-radius:5px;\n"
-"    padding:2px 4px\n"
+"    border-radius: 5px;\n"
+"    padding: 2px 4px;\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"    background-color: #cce4f7;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    background-color: #0078d7;\n"
+"    color: white;\n"
 "}")
         self.process_edit.setObjectName("process_edit")
         self.stategroup_grid.addWidget(self.process_edit, 0, 1, 1, 1)
         self.P_edit = QtWidgets.QLineEdit(self.gridLayoutWidget_3)
         self.P_edit.setStyleSheet("QLineEdit {\n"
+"    background-color: #f0f0f0;\n"
 "    font: 10pt \"Times New Roman\";\n"
 "    qproperty-alignment: AlignCenter;\n"
-"    border-radius:5px;\n"
-"    padding:2px 4px\n"
+"    border-radius: 5px;\n"
+"    padding: 2px 4px;\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"    background-color: #cce4f7;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    background-color: #0078d7;\n"
+"    color: white;\n"
 "}")
         self.P_edit.setObjectName("P_edit")
         self.stategroup_grid.addWidget(self.P_edit, 2, 1, 1, 1)
         self.measure_edit = QtWidgets.QLineEdit(self.gridLayoutWidget_3)
         self.measure_edit.setStyleSheet("QLineEdit {\n"
+"    background-color: #f0f0f0;\n"
 "    font: 10pt \"Times New Roman\";\n"
 "    qproperty-alignment: AlignCenter;\n"
-"    border-radius:5px;\n"
-"    padding:2px 4px\n"
+"    border-radius: 5px;\n"
+"    padding: 2px 4px;\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"    background-color: #cce4f7;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    background-color: #0078d7;\n"
+"    color: white;\n"
 "}")
         self.measure_edit.setObjectName("measure_edit")
         self.stategroup_grid.addWidget(self.measure_edit, 1, 1, 1, 1)
@@ -235,10 +297,20 @@ class Ui_MainWindow(object):
         self.stategroup_grid.addWidget(self.info_lab, 3, 0, 1, 1)
         self.info_edit = QtWidgets.QLineEdit(self.gridLayoutWidget_3)
         self.info_edit.setStyleSheet("QLineEdit {\n"
+"    background-color: #f0f0f0;\n"
 "    font: 10pt \"Times New Roman\";\n"
 "    qproperty-alignment: AlignCenter;\n"
-"    border-radius:5px;\n"
-"    padding:2px 4px\n"
+"    border-radius: 5px;\n"
+"    padding: 2px 4px;\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"    background-color: #cce4f7;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    background-color: #0078d7;\n"
+"    color: white;\n"
 "}")
         self.info_edit.setObjectName("info_edit")
         self.stategroup_grid.addWidget(self.info_edit, 3, 1, 1, 1)
