@@ -19,7 +19,7 @@ class Ui_MainWindow(object):
         font.setFamily("Segoe UI")
         MainWindow.setFont(font)
         MainWindow.setStyleSheet("QMainWindow {\n"
-"    background-color: white;\n"
+"    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #122d4b, stop:1 #385978);\n"
 "}")
         MainWindow.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -51,11 +51,13 @@ class Ui_MainWindow(object):
         self.yes_or_no_hbox = QtWidgets.QHBoxLayout()
         self.yes_or_no_hbox.setObjectName("yes_or_no_hbox")
         self.yes_btn = QtWidgets.QRadioButton(self.gridLayoutWidget)
-        self.yes_btn.setStyleSheet("font: 10pt \"Calibri\";")
+        self.yes_btn.setStyleSheet("font: 10pt \"Calibri\";\n"
+"color: white;")
         self.yes_btn.setObjectName("yes_btn")
         self.yes_or_no_hbox.addWidget(self.yes_btn)
         self.no_btn = QtWidgets.QRadioButton(self.gridLayoutWidget)
-        self.no_btn.setStyleSheet("font: 10pt \"Calibri\";")
+        self.no_btn.setStyleSheet("font: 10pt \"Calibri\";\n"
+"color: white;")
         self.no_btn.setObjectName("no_btn")
         self.yes_or_no_hbox.addWidget(self.no_btn)
         self.softwaregroup_grid.addLayout(self.yes_or_no_hbox, 2, 1, 1, 1)
@@ -100,9 +102,15 @@ class Ui_MainWindow(object):
         self.simu_btn.setObjectName("simu_btn")
         self.softwaregroup_grid.addWidget(self.simu_btn, 0, 2, 1, 1)
         self.save_data_box = QtWidgets.QCheckBox(self.gridLayoutWidget)
+        self.save_data_box.setStyleSheet("QCheckBox {\n"
+"    Color: white;\n"
+"}")
         self.save_data_box.setObjectName("save_data_box")
         self.softwaregroup_grid.addWidget(self.save_data_box, 1, 1, 1, 1)
         self.save_fig_box = QtWidgets.QCheckBox(self.gridLayoutWidget)
+        self.save_fig_box.setStyleSheet("QCheckBox {\n"
+"    Color: white;\n"
+"}")
         self.save_fig_box.setObjectName("save_fig_box")
         self.softwaregroup_grid.addWidget(self.save_fig_box, 0, 1, 1, 1)
         self.method_menu = QtWidgets.QComboBox(self.gridLayoutWidget)
@@ -120,6 +128,7 @@ class Ui_MainWindow(object):
 "    font-family: \"SimSun\";\n"
 "    font-size: 10pt;\n"
 "    qproperty-alignment: AlignCenter;\n"
+"    color: white;\n"
 "}")
         self.save_time_lab.setObjectName("save_time_lab")
         self.softwaregroup_grid.addWidget(self.save_time_lab, 2, 0, 1, 1)
@@ -128,16 +137,17 @@ class Ui_MainWindow(object):
         self.para_group.setStyleSheet("QGroupBox {\n"
 "    font-size: 10pt; \n"
 "    qproperty-alignment: AlignCenter;\n"
-"    border: 0.5px solid #a9a9a9;  /* 设置边框颜色为浅灰色 */\n"
+"    border: 0.5px solid #a9a9a9; \n"
 "    border-radius: 5px;\n"
-"    padding: 2px 4px;\n"
+"    padding: 8px 4px 4px 4px;\n"
 "}\n"
 "\n"
 "QGroupBox::title {\n"
 "    subcontrol-origin: margin;\n"
-"    subcontrol-position: top center; /* 标题居中 */\n"
+"    subcontrol-position: top center;\n"
 "    padding: 0 3px 0 3px;\n"
-"    background-color: transparent;  /* 标题背景透明 */\n"
+"    background-color: transparent;\n"
+"    color: white;\n"
 "}")
         self.para_group.setObjectName("para_group")
         self.time_group = QtWidgets.QGroupBox(self.para_group)
@@ -151,12 +161,15 @@ class Ui_MainWindow(object):
         self.timegroup_grid.setContentsMargins(0, 0, 0, 0)
         self.timegroup_grid.setObjectName("timegroup_grid")
         self.sample_lab = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.sample_lab.setStyleSheet("color: white;")
         self.sample_lab.setObjectName("sample_lab")
         self.timegroup_grid.addWidget(self.sample_lab, 1, 0, 1, 1)
         self.simu_lab = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.simu_lab.setStyleSheet("color: white;")
         self.simu_lab.setObjectName("simu_lab")
         self.timegroup_grid.addWidget(self.simu_lab, 0, 0, 1, 1)
         self.init_lab = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.init_lab.setStyleSheet("color: white;")
         self.init_lab.setObjectName("init_lab")
         self.timegroup_grid.addWidget(self.init_lab, 2, 0, 1, 1)
         self.simu_edit = QtWidgets.QLineEdit(self.gridLayoutWidget_2)
@@ -284,15 +297,19 @@ class Ui_MainWindow(object):
         self.measure_edit.setObjectName("measure_edit")
         self.stategroup_grid.addWidget(self.measure_edit, 1, 1, 1, 1)
         self.process_lab = QtWidgets.QLabel(self.gridLayoutWidget_3)
+        self.process_lab.setStyleSheet("color: white;")
         self.process_lab.setObjectName("process_lab")
         self.stategroup_grid.addWidget(self.process_lab, 0, 0, 1, 1)
         self.measure_lab = QtWidgets.QLabel(self.gridLayoutWidget_3)
+        self.measure_lab.setStyleSheet("color: white;")
         self.measure_lab.setObjectName("measure_lab")
         self.stategroup_grid.addWidget(self.measure_lab, 1, 0, 1, 1)
         self.P_lab = QtWidgets.QLabel(self.gridLayoutWidget_3)
+        self.P_lab.setStyleSheet("color: white;")
         self.P_lab.setObjectName("P_lab")
         self.stategroup_grid.addWidget(self.P_lab, 2, 0, 1, 1)
         self.info_lab = QtWidgets.QLabel(self.gridLayoutWidget_3)
+        self.info_lab.setStyleSheet("color: white;")
         self.info_lab.setObjectName("info_lab")
         self.stategroup_grid.addWidget(self.info_lab, 3, 0, 1, 1)
         self.info_edit = QtWidgets.QLineEdit(self.gridLayoutWidget_3)
@@ -344,7 +361,8 @@ class Ui_MainWindow(object):
         self.title_lab.setGeometry(QtCore.QRect(10, 10, 551, 61))
         self.title_lab.setStyleSheet("QLabel {\n"
 "    font: 28pt \"华文中宋\";\n"
-"    qproperty-alignment: AlignCenter;  /* 文字居中 */\n"
+"    qproperty-alignment: AlignCenter;\n"
+"    color: white;\n"
 "}\n"
 "")
         self.title_lab.setObjectName("title_lab")

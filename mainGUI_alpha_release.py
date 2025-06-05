@@ -33,15 +33,19 @@ class MainApp(QMainWindow, Ui_MainWindow):
         self.eq2_disp.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         
         # 设置默认选中状态
-        self.yes_btn.setChecked(True)       # 默认选择"带时间戳"选项
-        self.save_fig_box.setChecked(False)  # 默认选择"保存图片"选项
-        self.save_data_box.setChecked(True) # 默认选择"保存数据"选项
+        self.yes_btn.setChecked(True)           # 默认选择"带时间戳"选项
+        self.save_fig_box.setChecked(False)     # 默认选择"保存图片"选项
+        self.save_data_box.setChecked(True)     # 默认选择"保存数据"选项
 
         # 初始化下拉菜单栏状态
         self.method_menu.currentIndexChanged.emit(0)  # 触发索引0的变化（默认选项）
         
         # 设置应用程序图标
         self.set_application_icon()
+        # 禁用最大化功能
+        self.setWindowFlags(self.windowFlags() & ~QtCore.Qt.WindowMaximizeButtonHint)
+        # 固定窗口大小
+        self.setFixedSize(self.size())
 
         # 绑定保存图片复选框的状态变更事件
         self.save_fig_box.stateChanged.connect(self.check_save_fig_warning)

@@ -20,7 +20,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow {
-    background-color: white;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #122d4b, stop:1 #385978);
 }</string>
   </property>
   <property name="toolButtonStyle">
@@ -70,7 +70,8 @@ QGroupBox::title {
         <item>
          <widget class="QRadioButton" name="yes_btn">
           <property name="styleSheet">
-           <string notr="true">font: 10pt &quot;Calibri&quot;;</string>
+           <string notr="true">font: 10pt &quot;Calibri&quot;;
+color: white;</string>
           </property>
           <property name="text">
            <string>Yes</string>
@@ -80,7 +81,8 @@ QGroupBox::title {
         <item>
          <widget class="QRadioButton" name="no_btn">
           <property name="styleSheet">
-           <string notr="true">font: 10pt &quot;Calibri&quot;;</string>
+           <string notr="true">font: 10pt &quot;Calibri&quot;;
+color: white;</string>
           </property>
           <property name="text">
            <string>No</string>
@@ -143,6 +145,11 @@ QPushButton:pressed{
       </item>
       <item row="1" column="1">
        <widget class="QCheckBox" name="save_data_box">
+        <property name="styleSheet">
+         <string notr="true">QCheckBox {
+	Color: white;
+}</string>
+        </property>
         <property name="text">
          <string>保存数据</string>
         </property>
@@ -150,6 +157,11 @@ QPushButton:pressed{
       </item>
       <item row="0" column="1">
        <widget class="QCheckBox" name="save_fig_box">
+        <property name="styleSheet">
+         <string notr="true">QCheckBox {
+	Color: white;
+}</string>
+        </property>
         <property name="text">
          <string>保存图片</string>
         </property>
@@ -199,6 +211,7 @@ QPushButton:pressed{
     font-family: &quot;SimSun&quot;;
     font-size: 10pt;
     qproperty-alignment: AlignCenter;
+	color: white;
 }</string>
         </property>
         <property name="text">
@@ -222,16 +235,17 @@ QPushButton:pressed{
      <string notr="true">QGroupBox {
     font-size: 10pt; 
     qproperty-alignment: AlignCenter;
-    border: 0.5px solid #a9a9a9;  /* 设置边框颜色为浅灰色 */
+    border: 0.5px solid #a9a9a9; 
     border-radius: 5px;
-    padding: 2px 4px;
+    padding: 8px 4px 4px 4px;
 }
 
 QGroupBox::title {
     subcontrol-origin: margin;
-    subcontrol-position: top center; /* 标题居中 */
+    subcontrol-position: top center;
     padding: 0 3px 0 3px;
-    background-color: transparent;  /* 标题背景透明 */
+    background-color: transparent;
+	color: white;
 }</string>
     </property>
     <property name="title">
@@ -261,6 +275,9 @@ QGroupBox::title {
       <layout class="QGridLayout" name="timegroup_grid">
        <item row="1" column="0">
         <widget class="QLabel" name="sample_lab">
+         <property name="styleSheet">
+          <string notr="true">color: white;</string>
+         </property>
          <property name="text">
           <string>采样时长</string>
          </property>
@@ -268,6 +285,9 @@ QGroupBox::title {
        </item>
        <item row="0" column="0">
         <widget class="QLabel" name="simu_lab">
+         <property name="styleSheet">
+          <string notr="true">color: white;</string>
+         </property>
          <property name="text">
           <string>仿真时长</string>
          </property>
@@ -275,6 +295,9 @@ QGroupBox::title {
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="init_lab">
+         <property name="styleSheet">
+          <string notr="true">color: white;</string>
+         </property>
          <property name="text">
           <string>初始状态</string>
          </property>
@@ -457,6 +480,9 @@ QLineEdit:focus {
        </item>
        <item row="0" column="0">
         <widget class="QLabel" name="process_lab">
+         <property name="styleSheet">
+          <string notr="true">color: white;</string>
+         </property>
          <property name="text">
           <string>过程噪声</string>
          </property>
@@ -464,6 +490,9 @@ QLineEdit:focus {
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="measure_lab">
+         <property name="styleSheet">
+          <string notr="true">color: white;</string>
+         </property>
          <property name="text">
           <string>量测噪声</string>
          </property>
@@ -471,6 +500,9 @@ QLineEdit:focus {
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="P_lab">
+         <property name="styleSheet">
+          <string notr="true">color: white;</string>
+         </property>
          <property name="text">
           <string>协方差</string>
          </property>
@@ -478,6 +510,9 @@ QLineEdit:focus {
        </item>
        <item row="3" column="0">
         <widget class="QLabel" name="info_lab">
+         <property name="styleSheet">
+          <string notr="true">color: white;</string>
+         </property>
          <property name="text">
           <string>信息矩阵</string>
          </property>
@@ -586,7 +621,8 @@ QLineEdit:focus {
     <property name="styleSheet">
      <string notr="true">QLabel {
 	font: 28pt &quot;华文中宋&quot;;
-    qproperty-alignment: AlignCenter;  /* 文字居中 */
+    qproperty-alignment: AlignCenter;
+	color: white;
 }
 </string>
     </property>
